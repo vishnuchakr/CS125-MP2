@@ -33,7 +33,7 @@ public class TimesTableTest {
         Assert.assertNull(TimesTable.generateTimesTable(0, 1), "Times table should be null for 0 to 1");
         Assert.assertNull(TimesTable.generateTimesTable(1, 1), "Times table should be null for 1 to 1");
         Assert.assertNull(TimesTable.generateTimesTable(1, 0), "Times table should be null for 1 to 0");
-        Assert.assertNull(TimesTable.generateTimesTable(1, 0), "Times table should be null for -4 to -2");
+        Assert.assertNull(TimesTable.generateTimesTable(-4, -2), "Times table should be null for -4 to -2");
     }
 
     /**
