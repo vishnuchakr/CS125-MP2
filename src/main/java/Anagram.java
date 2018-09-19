@@ -38,6 +38,51 @@ public class Anagram {
      * @see <a href="https://www.vocabulary.com/dictionary/anagram">Definition of anagram</a>
      */
     public static boolean areStrictAnagrams(final String first, final String second) {
+
+        //checks if strings are null
+        if (first == null || second == null) {
+            return false;
+        }
+
+        //creates char arrays from the given strings
+        char[] listOne = stringToAnagramArray(first);
+        char[] listTwo = stringToAnagramArray(second);
+
+        //if the array lengths aren't equal, return false
+        if (listOne.length != listTwo.length) {
+            return false;
+        }
+
+        //bubble sort the lists alphabetically
+        int n = listOne.length;
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = 0; j < n - i - 1; j++)
+                if (listOne[j] > listOne[j + 1]) {
+                    // swap temp and arr[i]
+                    char temp = listOne[j];
+                    listOne[j] = listOne[j + 1];
+                    listOne[j + 1] = temp;
+                }
+        }
+
+        int m = listTwo.length;
+        for (int i = 0; i < m - 1; i++) {
+            for (int j = 0; j < m - i - 1; j++)
+                if (listTwo[j] > listTwo[j + 1]) {
+                    // swap temp and arr[i]
+                    char temp = listTwo[j];
+                    listTwo[j] = listTwo[j + 1];
+                    listTwo[j + 1] = temp;
+                }
+        }
+
+        //compares the lists and returns true if each of the elements are equal at each index
+        for (int i = 0; i < listOne.length; i++) {
+            if (listOne[i] != listTwo[i]) {
+                return false;
+            }
+        }
+        return true;
     }
 
     /**

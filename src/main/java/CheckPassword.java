@@ -39,6 +39,20 @@ public class CheckPassword {
      * @param minSpecial the minimum number of special characters that the password must contain
      * @return true if the password follows the rules, false otherwise
      */
+    public static boolean checkAPassword(final String password, final int minLength, final int minCapitalLetter,
+                                         final int minNumber, final int minSpecial) {
+
+        boolean match = false;
+        if (password.length() < minLength) {
+            return match;
+        }
+
+        int special = minSpecial;
+        int capital = minCapitalLetter;
+        int number = minNumber;
+
+        return match;
+    }
 
     /* ********************************************************************************************
      * You do not need to modify code below this comment.
