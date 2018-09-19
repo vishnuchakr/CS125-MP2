@@ -35,6 +35,7 @@ public class Anagram {
      *
      * @param first the first string to use for the anagram comparison
      * @param second the second string to use for the anagram comparison
+     * @return returns true if all the tests are passed
      * @see <a href="https://www.vocabulary.com/dictionary/anagram">Definition of anagram</a>
      */
     public static boolean areStrictAnagrams(final String first, final String second) {
@@ -52,24 +53,26 @@ public class Anagram {
         //bubble sort listOne alphabetically
         int n = listOne.length;
         for (int i = 0; i < n - 1; i++) {
-            for (int j = 0; j < n - i - 1; j++)
+            for (int j = 0; j < n - i - 1; j++) {
                 if (listOne[j] > listOne[j + 1]) {
                     // swap temp and arr[i]
                     char temp = listOne[j];
                     listOne[j] = listOne[j + 1];
                     listOne[j + 1] = temp;
                 }
+            }
         }
         //bubble sort listTwo alphabetically
         int m = listTwo.length;
         for (int i = 0; i < m - 1; i++) {
-            for (int j = 0; j < m - i - 1; j++)
+            for (int j = 0; j < m - i - 1; j++) {
                 if (listTwo[j] > listTwo[j + 1]) {
                     // swap temp and arr[i]
                     char temp = listTwo[j];
                     listTwo[j] = listTwo[j + 1];
                     listTwo[j + 1] = temp;
                 }
+            }
         }
         //compares the lists and returns true if each of the elements are equal at each index
         for (int i = 0; i < listOne.length; i++) {

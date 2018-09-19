@@ -46,7 +46,8 @@ public class CheckPassword {
         int capital = minCapitalLetter;
         int number = minNumber;
         int special = minSpecial;
-        //
+        //Ensures that the requirements laid out by the parameters are achieved
+        //Subtracts from the number of necessary characters required until the number is met or the condition fails
         for (int i = 0; i < password.length(); i++) {
             if (CAPITAL_LETTERS.indexOf(password.charAt(i)) != -1) {
                 capital--;
@@ -59,10 +60,11 @@ public class CheckPassword {
             }
             length--;
         }
-
+        //return true if the password requirements were met
         if (length <= 0 && capital <= 0 && number <= 0 && special <= 0) {
             return true;
         }
+        //if the requirements are nto met return false
         return false;
     }
 
