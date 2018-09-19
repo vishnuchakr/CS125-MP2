@@ -11,6 +11,22 @@ import java.util.Scanner;
  */
 public class StringSplitter {
 
+    /**
+     * Splits a string whenever the character changes.
+     * @param input The string given by the user to be split.
+     * @return The split string.
+     */
+    public static String stringSplitter(final String input) {
+        //if the input string is null return null
+        if (input == null) {
+            return null;
+        }
+        //turn the string into a char array
+        char[] list = input.toCharArray();
+        //iterate through the string to find the indices of character cha
+
+    }
+
     /* ********************************************************************************************
      * You do not need to modify code below this comment.
      * ********************************************************************************************/

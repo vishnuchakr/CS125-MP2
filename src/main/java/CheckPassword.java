@@ -41,17 +41,29 @@ public class CheckPassword {
      */
     public static boolean checkAPassword(final String password, final int minLength, final int minCapitalLetter,
                                          final int minNumber, final int minSpecial) {
-
-        boolean match = false;
-        if (password.length() < minLength) {
-            return match;
-        }
-
-        int special = minSpecial;
+        //initializes parameter variables
+        int length = minLength;
         int capital = minCapitalLetter;
         int number = minNumber;
+        int special = minSpecial;
+        //
+        for (int i = 0; i < password.length(); i++) {
+            if (CAPITAL_LETTERS.indexOf(password.charAt(i)) != -1) {
+                capital--;
+            }
+            if (NUMBERS.indexOf(password.charAt(i)) != -1) {
+                number--;
+            }
+            if (SPECIAL.indexOf(password.charAt(i)) != -1) {
+                special--;
+            }
+            length--;
+        }
 
-        return match;
+        if (length <= 0 && capital <= 0 && number <= 0 && special <= 0) {
+            return true;
+        }
+        return false;
     }
 
     /* ********************************************************************************************
