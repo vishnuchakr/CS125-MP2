@@ -12,7 +12,6 @@ public class TimesTable {
      * @return returns a two-dimensional integer array that holds the multiplication table.
      */
     public static int[][] generateTimesTable(final int one, final int two) {
-
         if ((one >= two) || (one <= 0) || two <= 0) {
             return null;
         }
