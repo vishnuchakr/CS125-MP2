@@ -16,14 +16,13 @@ public class StringSplitter {
      * @param input The string given by the user to be split.
      * @return The split string.
      */
-    public static String stringSplitter(final String input) {
+    public static String[] stringSplitter(final String input) {
         //if the input string is null return null
         if (input == null) {
             return null;
         }
-        //turn the string into a char array
-        char[] list = input.toCharArray();
-        //iterate through the string to find the indices of character cha
+        String returnString = "";
+
 
     }
 

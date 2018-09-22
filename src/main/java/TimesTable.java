@@ -13,8 +13,34 @@ public class TimesTable {
      */
     public static int[][] generateTimesTable(final int one, final int two) {
 
+        if ((one >= two) || (one <= 0) || two <= 0) {
+            return null;
+        }
 
-
+        int[][] timesTable = new int[(two - one) + 2][(two - one) + 2];
+        timesTable[0][0] = 0;
+        int startOne = one;
+        for (int i = 0; i < timesTable.length - 1; i++) {
+            while (startOne <= two) {
+                timesTable[0][i + 1] = startOne;
+                startOne++;
+                i++;
+            }
+        }
+        int startTwo = one;
+        for (int j = 0; j < timesTable[0].length; j++) {
+            while (startTwo <= two) {
+                timesTable[j + 1][0] = startTwo;
+                startTwo++;
+                j++;
+            }
+        }
+        for (int x = 1; x < timesTable.length; x++) {
+            for (int y = 1; y < timesTable[0].length; y++) {
+                timesTable[x][y] = timesTable[x][0] * timesTable[0][y];
+            }
+        }
+        return timesTable;
     }
 
     /**
