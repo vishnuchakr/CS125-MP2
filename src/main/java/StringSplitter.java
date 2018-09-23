@@ -21,9 +21,33 @@ public class StringSplitter {
         if (input == null) {
             return null;
         }
-        String returnString = "";
-
-
+        if (input.length() == 0) {
+            return new String[0];
+        }
+        char[] list = input.toCharArray();
+        int iterator = 1;
+        for (int i = 0; i < list.length - 1; i++) {
+            if (list[i] != list[i + 1]) {
+                iterator++;
+            }
+        }
+        String[] returnArr = new String[iterator];
+        int start = 0;
+        int end = 0;
+        for (int i = 0; i < list.length - 1; i++) {
+            if (list[i] != list[i + 1]) {
+                returnArr[end] = input.substring(start, i + 1);
+                start = i + 1;
+                end++;
+            }
+        }
+        if (returnArr[0] == null) {
+            returnArr[0] = input;
+        }
+        if (returnArr[returnArr.length - 1] == null) {
+            returnArr[returnArr.length - 1] = input.substring(start, list.length);
+        }
+        return returnArr;
     }
 
     /* ********************************************************************************************
